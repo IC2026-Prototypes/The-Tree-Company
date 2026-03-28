@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TenderTree — The Tree Company</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- SIDEBAR NAV -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 4 C14 4 8 10 9 17 C7 17 5 19 6 22 C4 22 3 24 5 26 L15 26 L15 36 L25 36 L25 26 L35 26 C37 24 36 22 34 22 C35 19 33 17 31 17 C32 10 26 4 20 4Z" fill="#4a7c59" stroke="#2d5a3d" stroke-width="1"/>
+        </svg>
+      </div>
+      <div>
+        <span class="logo-title">TenderTree</span>
+        <span class="logo-sub">The Tree Company</span>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="index.html" class="nav-item active" data-page="dashboard">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        Dashboard
+      </a>
+      <a href="tenders.html" class="nav-item" data-page="tenders">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10,9 9,9 8,9"/></svg>
+        Available Tenders
+      </a>
+      <a href="proposals.html" class="nav-item" data-page="proposals">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+        My Proposals
+      </a>
+      <a href="templates.html" class="nav-item" data-page="templates">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+        Templates
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="user-pill">
+        <div class="user-avatar">TC</div>
+        <div class="user-info">
+          <span class="user-name">The Tree Company</span>
+          <span class="user-role">Administrator</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <h1 class="page-title">Dashboard</h1>
+        <span class="page-subtitle">Overview of your tender pipeline</span>
+      </div>
+      <div class="topbar-right">
+        <div class="search-bar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" placeholder="Search tenders, proposals…" />
+        </div>
+        <button class="btn-primary" onclick="window.location.href='tenders.html'">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          New Proposal
+        </button>
+      </div>
+    </header>
+
+    <!-- HERO BANNER -->
+    <section class="hero-banner">
+      <div class="hero-content">
+        <h2>Win More Work, <em>Effortlessly.</em></h2>
+        <p>TenderTree automates your pitch and tender writing — scanning live opportunities, generating tailored proposals in seconds, and presenting your expertise exactly how clients expect to see it.</p>
+        <button class="btn-hero" onclick="window.location.href='tenders.html'">Browse Live Tenders</button>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-tree">
+          <svg viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="100" cy="80" rx="60" ry="60" fill="#4a7c59" opacity="0.15"/>
+            <path d="M100 20 C75 20 50 45 55 70 C45 68 35 78 40 90 C30 90 25 102 35 110 L65 110 L65 190 L100 190 L100 110 L135 110 L135 110 C145 102 140 90 130 90 C135 78 125 68 115 70 C120 45 125 20 100 20Z" fill="#4a7c59" stroke="#2d5a3d" stroke-width="1.5"/>
+            <path d="M85 75 C80 65 68 62 65 72" stroke="#2d5a3d" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M115 85 C122 75 134 76 133 86" stroke="#2d5a3d" stroke-width="1.5" stroke-linecap="round"/>
+            <rect x="94" y="140" width="12" height="50" fill="#6b4f3a" rx="2"/>
+          </svg>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-pill">
+            <span class="stat-number">24</span>
+            <span class="stat-label">Live Tenders</span>
+          </div>
+          <div class="stat-pill">
+            <span class="stat-number">8</span>
+            <span class="stat-label">In Progress</span>
+          </div>
+          <div class="stat-pill">
+            <span class="stat-number">92%</span>
+            <span class="stat-label">Accuracy Rate</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS ROW -->
+    <section class="stats-row">
+      <div class="stat-card">
+        <div class="stat-icon green">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+        </div>
+        <div class="stat-body">
+          <span class="stat-val">24</span>
+          <span class="stat-lbl">Available Tenders</span>
+        </div>
+        <div class="stat-trend up">+6 this week</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon amber">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+        </div>
+        <div class="stat-body">
+          <span class="stat-val">8</span>
+          <span class="stat-lbl">Drafts In Progress</span>
+        </div>
+        <div class="stat-trend up">+2 today</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon blue">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="stat-body">
+          <span class="stat-val">13</span>
+          <span class="stat-lbl">Submitted</span>
+        </div>
+        <div class="stat-trend up">+3 this month</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon gold">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div class="stat-body">
+          <span class="stat-val">5</span>
+          <span class="stat-lbl">Won</span>
+        </div>
+        <div class="stat-trend up">$84k value</div>
+      </div>
+    </section>
+
+    <!-- CONTENT GRID -->
+    <div class="content-grid">
+
+      <!-- RECENT TENDERS -->
+      <section class="card recent-tenders">
+        <div class="card-header">
+          <h3>Recent Tenders</h3>
+          <a href="tenders.html" class="card-link">View all →</a>
+        </div>
+        <div class="tender-list">
+          <div class="tender-row" onclick="window.location.href='tenders.html'">
+            <div class="tender-badge urgent">Urgent</div>
+            <div class="tender-info">
+              <span class="tender-title">Council Parks Maintenance — North Sydney LGA</span>
+              <span class="tender-meta">NSW Government · Closes 4 Apr 2026</span>
+            </div>
+            <div class="tender-value">$120,000</div>
+            <button class="btn-sm" onclick="event.stopPropagation(); window.location.href='generate.html?id=1'">Generate</button>
+          </div>
+          <div class="tender-row" onclick="window.location.href='tenders.html'">
+            <div class="tender-badge open">Open</div>
+            <div class="tender-info">
+              <span class="tender-title">Urban Tree Canopy Program — City of Melbourne</span>
+              <span class="tender-meta">VIC Government · Closes 15 Apr 2026</span>
+            </div>
+            <div class="tender-value">$85,000</div>
+            <button class="btn-sm" onclick="event.stopPropagation(); window.location.href='generate.html?id=2'">Generate</button>
+          </div>
+          <div class="tender-row" onclick="window.location.href='tenders.html'">
+            <div class="tender-badge open">Open</div>
+            <div class="tender-info">
+              <span class="tender-title">Hazardous Tree Removal — Strata Corp QLD</span>
+              <span class="tender-meta">Private · Closes 22 Apr 2026</span>
+            </div>
+            <div class="tender-value">$34,500</div>
+            <button class="btn-sm" onclick="event.stopPropagation(); window.location.href='generate.html?id=3'">Generate</button>
+          </div>
+          <div class="tender-row" onclick="window.location.href='tenders.html'">
+            <div class="tender-badge closing">Closing Soon</div>
+            <div class="tender-info">
+              <span class="tender-title">Arborist Consultation Services — Roads NSW</span>
+              <span class="tender-meta">NSW Government · Closes 30 Mar 2026</span>
+            </div>
+            <div class="tender-value">$58,000</div>
+            <button class="btn-sm" onclick="event.stopPropagation(); window.location.href='generate.html?id=4'">Generate</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ACTIVITY FEED -->
+      <section class="card activity-feed">
+        <div class="card-header">
+          <h3>Recent Activity</h3>
+        </div>
+        <div class="activity-list">
+          <div class="activity-item">
+            <div class="activity-dot green"></div>
+            <div class="activity-body">
+              <span>Proposal generated for <strong>Roads NSW Arborist</strong></span>
+              <span class="activity-time">2 hours ago</span>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-dot amber"></div>
+            <div class="activity-body">
+              <span>Draft saved — <strong>Melbourne Canopy Program</strong></span>
+              <span class="activity-time">Yesterday</span>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-dot blue"></div>
+            <div class="activity-body">
+              <span>Tender submitted — <strong>Penrith City Council</strong></span>
+              <span class="activity-time">2 days ago</span>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-dot gold"></div>
+            <div class="activity-body">
+              <span>WON — <strong>Blacktown Stump Grinding Contract</strong> 🎉</span>
+              <span class="activity-time">1 week ago</span>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-dot green"></div>
+            <div class="activity-body">
+              <span>3 new tenders matched your profile</span>
+              <span class="activity-time">1 week ago</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- QUICK ACTIONS -->
+    <section class="quick-actions">
+      <h3>Quick Actions</h3>
+      <div class="actions-grid">
+        <a href="tenders.html" class="action-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <span>Browse Tenders</span>
+          <p>Search and filter live opportunities across all Australian procurement portals.</p>
+        </a>
+        <a href="generate.html" class="action-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13,2 13,9 20,9"/></svg>
+          <span>Generate Proposal</span>
+          <p>Instantly create a tailored, professional proposal using your approved templates.</p>
+        </a>
+        <a href="templates.html" class="action-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+          <span>Manage Templates</span>
+          <p>Update your company profile, service descriptions and pricing templates.</p>
+        </a>
+        <a href="proposals.html" class="action-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          <span>Track Submissions</span>
+          <p>Monitor all submitted proposals and follow up with a single click.</p>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

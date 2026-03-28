@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Available Tenders — TenderTree</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 4 C14 4 8 10 9 17 C7 17 5 19 6 22 C4 22 3 24 5 26 L15 26 L15 36 L25 36 L25 26 L35 26 C37 24 36 22 34 22 C35 19 33 17 31 17 C32 10 26 4 20 4Z" fill="#4a7c59" stroke="#2d5a3d" stroke-width="1"/>
+        </svg>
+      </div>
+      <div>
+        <span class="logo-title">TenderTree</span>
+        <span class="logo-sub">The Tree Company</span>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="index.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Dashboard</a>
+      <a href="tenders.html" class="nav-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10,9 9,9 8,9"/></svg>Available Tenders</a>
+      <a href="proposals.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>My Proposals</a>
+      <a href="templates.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>Templates</a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="user-pill">
+        <div class="user-avatar">TC</div>
+        <div class="user-info">
+          <span class="user-name">The Tree Company</span>
+          <span class="user-role">Administrator</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <div class="topbar-left">
+        <h1 class="page-title">Available Tenders</h1>
+        <span class="page-subtitle">Live opportunities matched to your services</span>
+      </div>
+      <div class="topbar-right">
+        <div class="search-bar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="tenderSearch" placeholder="Search tenders…" oninput="filterTenders()" />
+        </div>
+      </div>
+    </header>
+
+    <!-- FILTERS -->
+    <section class="filter-bar">
+      <button class="filter-chip active" onclick="setFilter('all', this)">All Tenders <span class="chip-count">24</span></button>
+      <button class="filter-chip" onclick="setFilter('government', this)">Government <span class="chip-count">14</span></button>
+      <button class="filter-chip" onclick="setFilter('private', this)">Private <span class="chip-count">7</span></button>
+      <button class="filter-chip" onclick="setFilter('council', this)">Council <span class="chip-count">3</span></button>
+      <div class="filter-divider"></div>
+      <select class="filter-select" onchange="sortTenders(this.value)">
+        <option value="closing">Closing Soon</option>
+        <option value="value-high">Highest Value</option>
+        <option value="value-low">Lowest Value</option>
+        <option value="newest">Newest</option>
+      </select>
+    </section>
+
+    <!-- TENDER CARDS GRID -->
+    <div class="tender-grid" id="tenderGrid">
+
+      <div class="tender-card" data-category="government" data-value="120000">
+        <div class="tc-header">
+          <div class="tc-badges">
+            <span class="badge urgent">Urgent</span>
+            <span class="badge govt">NSW Gov</span>
+          </div>
+          <div class="tc-value">$120,000</div>
+        </div>
+        <h3 class="tc-title">Council Parks Maintenance — North Sydney LGA</h3>
+        <p class="tc-desc">Ongoing maintenance and management of council-owned trees across the North Sydney local government area. Includes risk assessment, pruning, hazard removal and reporting.</p>
+        <div class="tc-meta">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Closes 4 Apr 2026</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> North Sydney, NSW</span>
+        </div>
+        <div class="tc-footer">
+          <div class="tc-match">
+            <div class="match-bar"><div class="match-fill" style="width:94%"></div></div>
+            <span>94% match</span>
+          </div>
+          <button class="btn-generate" onclick="window.location.href='generate.html?id=1'">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13,2 13,9 20,9"/></svg>
+            Create Proposal
+          </button>
+        </div>
+      </div>
+
+      <div class="tender-card" data-category="government" data-value="85000">
+        <div class="tc-header">
+          <div class="tc-badges">
+            <span class="badge open">Open</span>
+            <span class="badge govt">VIC Gov</span>
+          </div>
+          <div class="tc-value">$85,000</div>
+        </div>
+        <h3 class="tc-title">Urban Tree Canopy Program — City of Melbourne</h3>
+        <p class="tc-desc">Expansion and maintenance of Melbourne's urban tree canopy. Services include tree planting, establishment care, soil health management and annual inspection reporting.</p>
+        <div class="tc-meta">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Closes 15 Apr 2026</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Melbourne, VIC</span>
+        </div>
+        <div class="tc-footer">
+          <div class="tc-match">
+            <div class="match-bar"><div class="match-fill" style="width:88%"></div></div>
+            <span>88% match</span>
+          </div>
+          <button class="btn-generate" onclick="window.location.href='generate.html?id=2'">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13,2 13,9 20,9"/></svg>
+            Create Proposal
+          </button>
+        </div>
+      </div>
+
+      <div class="tender-card" data-category="private" data-value="34500">
+        <div class="tc-header">
+          <div class="tc-badges">
+            <span class="badge open">Open</span>
+            <span class="badge private">Private</span>
+          </div>
+          <div class="tc-value">$34,500</div>
+        </div>
+        <h3 class="tc-title">Hazardous Tree Removal — Strata Corp QLD</h3>
+        <p class="tc-desc">Emergency removal of 12 identified hazardous trees across a residential strata complex in Brisbane. ISA-certified arborist reports and WorkCover compliance required.</p>
+        <div class="tc-meta">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Closes 22 Apr 2026</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Brisbane, QLD</span>
+        </div>
+        <div class="tc-footer">
+          <div class="tc-match">
+            <div class="match-bar"><div class="match-fill" style="width:97%"></div></div>
+            <span>97% match</span>
+          </div>
+          <button class="btn-generate" onclick="window.location.href='generate.html?id=3'">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13,2 13,9 20,9"/></svg>
+            Create Proposal
+          </button>
+        </div>
+      </div>
+
+      <div class="tender-card" data-category="government" data-value="58000">
+        <div class="tc-header">
+          <div class="tc-badges">
+            <span class="badge closing">Closing Soon</span>
+            <span class="badge govt">NSW Gov</span>
+          </div>
+          <div class="tc-value">$58,000</div>
+        </div>
+        <h3 class="tc-title">Arborist Consultation Services — Roads NSW</h3>
+        <p class="tc-desc">Provision of ISA-certified arborist services for road corridor tree assessments, development application reviews, and expert witness reporting across the greater Sydney region.</p>
+        <div class="tc-meta">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Closes 30 Mar 2026</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Sydney, NSW</span>
+        </div>
+        <div class="tc-footer">
+          <div class="tc-match">
+            <div class="match-bar"><div class="match-fill" style="width:91%"></div></div>
+            <span>91% match</span>
+          </div>
+          <button class="btn-generate" onclick="window.location.href='generate.html?id=4'">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13,2 13,9 20,9"/></svg>
+            Create Proposal
+          </button>
+        </div>
+      </div>
+
+      <div class="tender-card" data-category="council" data-value="210000">
+        <div class="tc-header">
+          <div class="tc-badges">
+            <span class="badge open">Open</span>
+            <span class="badge council">Council</span>
+          </div>
+          <div class="tc-value">$210,000</div>
+        </div>
+        <h3 class="tc-title">Vegetation Management Panel — Blacktown City Council</h3>
+        <p class="tc-desc">3-year panel agreement for the supply of vegetation management services including tree pruning, removal, root barrier installation, and emergency response across Blacktown LGA.</p>
+        <div class="tc-meta">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Closes 10 May 2026</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Blacktown, NSW</span>
+        </div>
+        <div class="tc-footer">
+          <div class="tc-match">
+            <div class="match-bar"><div class="match-fill" style="width:99%"></div></div>
+            <span>99% match</span>
+          </div>
+          <button class="btn-generate" onclick="window.location.href='generate.html?id=5'">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13,2 13,9 20,9"/></svg>
+            Create Proposal
+          </button>
+        </div>
+      </div>
+
+      <div class="tender-card" data-category="private" data-value="45000">
+        <div class="tc-header">
+          <div class="tc-badges">
+            <span class="badge open">Open</span>
+            <span class="badge private">Private</span>
+          </div>
+          <div class="tc-value">$45,000</div>
+        </div>
+        <h3 class="tc-title">Estate Grounds Management — Hunter Valley Winery</h3>
+        <p class="tc-desc">Annual grounds and tree management for a heritage-listed Hunter Valley property. Includes heritage tree preservation plans, trimming, pest management and storm damage response.</p>
+        <div class="tc-meta">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Closes 28 Apr 2026</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Hunter Valley, NSW</span>
+        </div>
+        <div class="tc-footer">
+          <div class="tc-match">
+            <div class="match-bar"><div class="match-fill" style="width:85%"></div></div>
+            <span>85% match</span>
+          </div>
+          <button class="btn-generate" onclick="window.location.href='generate.html?id=6'">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13,2 13,9 20,9"/></svg>
+            Create Proposal
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
